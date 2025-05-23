@@ -6,9 +6,9 @@ const JWT_SECRET = process.env.JWT_SECRET || "your_jwt_secret";
 
 export const signup = async (req, res) => {
   try {
-    const { email, password } = req.body;
-    if (!email || !password) {
-      return res.status(400).json({ message: "Email and password are required." });
+    const { email, password ,name} = req.body;
+    if (!email || !password || !name) {
+      return res.status(400).json({ message: "Email, password, and name are required." });
     }
     const existingUser = await User.findOne({ email });
 
@@ -16,7 +16,7 @@ export const signup = async (req, res) => {
       return res.status(409).json({ message: "User already exists." });
     }
     const hashedPassword = await bcrypt.hash(password, 10);
-    const user = new User({ email, password: hashedPassword });
+    const user = new User({ email, password: hashedPassword ,name});
     await user.save();
     return res.status(201).json({ message: "User registered successfully." });
   } catch (error) {
