@@ -46,7 +46,7 @@ const MarineData = () => {
       </form>
       {error && <div className="text-red-500 mb-2 font-semibold">{error}</div>}
       {result && result.length > 0 && (
-        <div className="overflow-x-auto mt-4">
+        <div className="table-scroll mt-4">
           <table className="w-full border rounded-lg overflow-hidden">
             <thead>
               <tr className="bg-blue-100 text-blue-800">

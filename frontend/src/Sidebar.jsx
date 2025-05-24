@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 const Sidebar = ({ onLogout }) => {
   const location = useLocation();
   return (
-    <aside className="bg-gradient-to-b from-blue-800 to-blue-600 text-white w-64 min-h-screen p-8 flex flex-col shadow-2xl rounded-r-3xl animate-fade-in sidebar">
+    <aside className="fixed top-0 left-0 h-screen w-64 bg-gradient-to-b from-blue-800 to-blue-600 text-white p-8 flex flex-col shadow-2xl rounded-none animate-fade-in sidebar z-20">
       <div className="text-3xl font-extrabold mb-10 tracking-wide text-center">🌊 Marine</div>
       <nav className="flex-1">
         <ul>

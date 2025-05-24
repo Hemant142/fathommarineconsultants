@@ -12,9 +12,37 @@
   }
 }
 
-/* General body and font improvements for Tailwind UI */
+body, html, #root {
+  height: 100vh;
+  min-height: 100vh;
+  width: 100vw;
+  min-width: 100vw;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  @apply bg-gradient-to-br from-blue-100 to-blue-300 min-h-screen text-slate-800 antialiased;
+  @apply bg-gradient-to-br from-blue-100 to-blue-300;
+  color: #1e293b;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.main-content {
+  margin-left: 16rem; /* width of sidebar */
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 2rem 2rem 2rem 2rem;
+  box-sizing: border-box;
+}
+
+/* Only allow table to scroll horizontally */
+.table-scroll {
+  overflow-x: auto;
+  width: 100%;
 }
 
 /* Remove default margin/padding for root elements */

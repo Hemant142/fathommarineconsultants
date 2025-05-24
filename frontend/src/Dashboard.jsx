@@ -16,14 +16,18 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-blue-100 to-blue-300">
+    <>
       <Sidebar onLogout={handleLogout} />
-      <main className="flex-1 p-8 md:p-16">
-        <WelcomeCard />
-        <DummyCards />
-        <MarineData />
-      </main>
-    </div>
+      <div className="ml-64 h-screen overflow-y-auto bg-gradient-to-br  ">
+        <main className="p-8 md:p-16 min-h-screen flex flex-col gap-8">
+          <div className="sticky top-0 z-10">
+            <WelcomeCard />
+          </div>
+          <DummyCards />
+          <MarineData />
+        </main>
+      </div>
+    </>
   );
 };
 
